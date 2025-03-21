@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-rich-black text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-blue to-deep-purple bg-clip-text text-transparent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-rich-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-medium-gray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-gray;
+}
