@@ -63,7 +63,7 @@ const TestimonialCard = ({ name, role, company, image, quote }) => {
 
 const Testimonials = () => {
   return (
-    <section className="bg-rich-black py-24">
+    <section id="testimonials" className="bg-rich-black py-24">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

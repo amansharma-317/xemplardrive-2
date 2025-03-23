@@ -62,7 +62,7 @@ const ScreenshotSection = () => {
   };
 
   return (
-    <section ref={ref} className="bg-rich-black py-24 relative overflow-hidden">
+    <section id="screenshots" ref={ref} className="bg-rich-black py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-64 h-64 bg-electric-blue/20 rounded-full blur-3xl"></div>
@@ -87,7 +87,7 @@ const ScreenshotSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Experience The Interface
+            User Interface Tour
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Intuitive, powerful, and designed for the modern fleet manager.

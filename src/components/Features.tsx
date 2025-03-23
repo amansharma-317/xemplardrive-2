@@ -159,14 +159,21 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       transition={{ duration: 0.6 }}
       className="group relative p-6 bg-medium-gray/30 backdrop-blur-md rounded-2xl hover:bg-medium-gray/50 transition-all duration-300"
     >
-      {/* Animated border on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-deep-purple/5 rounded-2xl overflow-hidden">
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-electric-blue to-deep-purple transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-          <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-deep-purple to-electric-blue transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-700 delay-100" />
-          <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-electric-blue to-deep-purple transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-200" />
-          <div className="absolute bottom-0 left-0 w-0.5 h-full bg-gradient-to-t from-deep-purple to-electric-blue transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-700 delay-300" />
-        </div>
+      {/* Gradient border solution using pseudo-element approach */}
+      <div className="absolute inset-0 rounded-2xl">
+        {/* This creates the complete border with gradient that follows rounded corners */}
+        <div 
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{
+            background: 'linear-gradient(135deg, #4CC9F0, #7209B7)',
+            mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            maskComposite: 'exclude',
+            WebkitMaskComposite: 'xor',
+            padding: '1px',
+            borderRadius: '1rem' // Same as rounded-2xl
+          }}
+        />
       </div>
       
       <div className="relative">
@@ -196,7 +203,7 @@ const Features = () => {
   });
 
   return (
-    <section ref={sectionRef} className="relative bg-rich-black py-24 overflow-hidden">
+    <section id="features" ref={sectionRef} className="relative bg-rich-black py-24 overflow-hidden">
       {/* Circuit Grid Background */}
       {sectionInView && <CircuitGrid />}
       

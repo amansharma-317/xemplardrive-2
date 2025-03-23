@@ -4,7 +4,7 @@ import { ChevronRight, Shield, Award, Clock } from 'lucide-react';
 
 const Cta = () => {
   return (
-    <section className="bg-rich-black py-24">
+    <section id="trial" className="bg-rich-black py-24">
       <div className="container mx-auto px-4">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-deep-purple/20" />
